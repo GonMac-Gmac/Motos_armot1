@@ -6,7 +6,7 @@
   <title>Motos Armot — Experiencia Exótica e Innovadora</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
   
@@ -15,22 +15,18 @@
 </head>
 <body>
 
+  <div class="aurora-container">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="aurora-blob blob-3"></div>
+  </div>
+
   <div id="cursor"></div>
   <div id="cursor-ring"></div>
 
-  <div class="fullscreen-menu" id="fullMenu">
-    <div class="menu-close" id="closeMenu">✕</div>
-    <ul class="full-menu-links">
-      <li><a href="#catalogo">Catálogo</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </div>
-
   <nav id="nav">
     <a href="#" class="nav-brand">
-      <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/650793681_122270788082194393_8231352739779381182_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=iLuiT8qwkoEQ7kNvwHrqYwl&_nc_oc=AdqNYZHdX71QfLbb581gCNg7xGTrsPP70P4v1N5kaxqEW7cicATabDzOAw1atFntekE&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=61n-e2DOidR2mlaRaj-rKA&_nc_ss=7a289&oh=00_Af7cjGDpeIdnvET13yVzZ5EtLYiTfwLhGb63RhqSxEiE9A&oe=6A0C24B1" alt="Logo Motos Armot" class="nav-logo-img">
+      <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/650793681_122270788082194393_8231352739779381182_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=iLuiT8qwkoEQ7kNvwHrqYwl&_nc_oc=AdqNYZHdX71QfLbb581gCNg7xGTrsPP70P4v1N5kaxqEW7cicATabDzOAw1atFntekE&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=61n-e2DOidR2mlaRaj-rKA&_nc_ss=7a289&oh=00_Af7cjGDpeIdnvET13yVzZ5EtLYiTfwLhGb63RhqSxEiE9A&oe=6A0C24B1" alt="Logo Motos Mora" class="nav-logo-img">
       <div class="brand-text">
         <span class="logo-txt">ARMOT</span>
         <span class="logo-sub">PUENTE PIEDRA</span>
@@ -57,7 +53,7 @@
   </nav>
 
   <div id="main-content">
-
+    
     <section id="intro-space">
       <div id="moto-overlay">
         <div class="moto-panel moto-panel-left" id="motoLeft">
@@ -106,10 +102,10 @@
     <section id="catalogo" class="section-glass">
       <div class="section-header reveal">
         <div>
-          <p class="section-kicker">Modelos Next-Gen</p>
-          <h2 class="section-title">Ingeniería <em>Armot</em></h2>
+          <p class="section-kicker">Nuestros modelos</p>
+          <h2 class="section-title">El catálogo <em>Armot</em></h2>
         </div>
-        <a href="#contacto" class="btn-ghost">Ver Stock Completo →</a>
+        <a href="#contacto" class="btn-ghost">Ver todos →</a>
       </div>
       <div class="catalog-grid">
         <div class="catalog-card reveal">
@@ -119,7 +115,7 @@
           </div>
           <div class="catalog-info">
             <span class="catalog-tag">Sport / Naked</span>
-            <h3 class="catalog-name">Cyber Fighter 250</h3>
+            <h3 class="catalog-name">300 Pro</h3>
             <p class="catalog-price">Desde <strong>S/ 8,500</strong></p>
           </div>
         </div>
@@ -130,7 +126,7 @@
           </div>
           <div class="catalog-info">
             <span class="catalog-tag">Urbana / Scooter</span>
-            <h3 class="catalog-name">Neon City 150</h3>
+            <h3 class="catalog-name">Fox 200F</h3>
             <p class="catalog-price">Desde <strong>S/ 4,200</strong></p>
           </div>
         </div>
@@ -141,7 +137,7 @@
           </div>
           <div class="catalog-info">
             <span class="catalog-tag">Enduro / Trail</span>
-            <h3 class="catalog-name">Apex Cross 200</h3>
+            <h3 class="catalog-name">Mora 300 Negro</h3>
             <p class="catalog-price">Desde <strong>S/ 6,800</strong></p>
           </div>
         </div>
@@ -152,7 +148,7 @@
           </div>
           <div class="catalog-info">
             <span class="catalog-tag">Eléctrica</span>
-            <h3 class="catalog-name">Volt E-Drive concept</h3>
+            <h3 class="catalog-name">Chacarera 200</h3>
             <p class="catalog-price">Desde <strong>S/ 5,900</strong></p>
           </div>
         </div>
@@ -162,32 +158,32 @@
     <section id="servicios">
       <div class="servicios-inner">
         <div class="reveal">
-          <p class="section-kicker">Rendimiento Garantizado</p>
-          <h2 class="section-title">Soporte<br><em>Exótico</em></h2>
-          <p class="section-body">La innovación no termina al comprar tu motocicleta. Te ofrecemos un ecosistema digital y mecánico completo.</p>
+          <p class="section-kicker">Lo que hacemos</p>
+          <h2 class="section-title">Servicios<br><em>completos</em></h2>
+          <p class="section-body">Todo lo que necesitas antes, durante y después de tu compra. Un solo lugar para cada etapa.</p>
         </div>
         <div class="servicios-list">
           <div class="servicio-row reveal">
             <span class="srv-num">01</span>
             <div class="srv-body">
-              <h3 class="srv-title">Taller de Precisión</h3>
-              <p class="srv-desc">Escaneo digital, revisiones de alto rendimiento y uso exclusivo de componentes originales de fábrica.</p>
+              <h3 class="srv-title">Mantenimiento & Taller</h3>
+              <p class="srv-desc">Técnicos especializados. Revisiones, cambios de aceite y reparaciones completas.</p>
             </div>
             <span class="srv-arrow">→</span>
           </div>
           <div class="servicio-row reveal">
             <span class="srv-num">02</span>
             <div class="srv-body">
-              <h3 class="srv-title">Financiamiento Inteligente</h3>
-              <p class="srv-desc">Procesos de aprobación digital al instante. Tasas competitivas para que no aplaces tu libertad.</p>
+              <h3 class="srv-title">Financiamiento Fácil</h3>
+              <p class="srv-desc">Planes de pago accesibles. Llévate tu moto hoy y paga en cuotas cómodas.</p>
             </div>
             <span class="srv-arrow">→</span>
           </div>
           <div class="servicio-row reveal">
             <span class="srv-num">03</span>
             <div class="srv-body">
-              <h3 class="srv-title">Logística a Domicilio</h3>
-              <p class="srv-desc">Tu nueva máquina llega protegida y lista para encenderse directamente en la puerta de tu garaje.</p>
+              <h3 class="srv-title">Entrega a Domicilio</h3>
+              <p class="srv-desc">Cobertura en Lima Metropolitana sin costo adicional en compras seleccionadas.</p>
             </div>
             <span class="srv-arrow">→</span>
           </div>
@@ -196,8 +192,8 @@
     </section>
 
     <section id="galeria" class="section-glass">
-      <p class="section-kicker reveal">Inspiración Visual</p>
-      <h2 class="section-title reveal">Universo <em>Armot</em></h2>
+      <p class="section-kicker reveal">Galería</p>
+      <h2 class="section-title reveal">Armot en <em>acción</em></h2>
       <div class="gallery-grid reveal">
         <div class="gallery-item gi-tall">
           <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/640948515_122268681944194393_382854531328592295_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=KUTwgiXb0oIQ7kNvwFXnlSy&_nc_oc=AdowmjlU1DTr3JTBVYGx8_jLCTd5E8yXGZR2aDDSPS3zyhZzxLiRDZwQ_YyukXFkkhI&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=cGzm7lYSmSBWrso70QAxhA&_nc_ss=7a289&oh=00_Af6_I7Ivm1wEYK35yGv1mfse7hGD5XNTqclOosm3eZSq5w&oe=6A0BFDB7" alt="Moto 1" loading="lazy"/>
@@ -224,27 +220,27 @@
             <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=900&q=80" alt="Motos Armot tienda" loading="lazy"/>
           </div>
           <div class="about-quote-card">
-            <p class="about-quote">"El futuro de la movilidad urbana en dos ruedas comienza aquí."</p>
-            <span class="about-quote-brand">— Visión Armot</span>
+            <p class="about-quote">"No vendemos motos.<br>Entregamos libertad."</p>
+            <span class="about-quote-brand">— Motos Armot</span>
           </div>
         </div>
         <div class="about-text-col reveal">
-          <p class="section-kicker">Filosofía</p>
-          <h2 class="section-title">Cultura de<br><em>Vanguardia</em></h2>
-          <p class="section-body">Rompiendo esquemas en Puente Piedra. No somos solo un concesionario, somos el puente tecnológico entre tú y la próxima generación de motociclismo. Rendimiento, estética neón y un servicio técnico implacable.</p>
-          <a href="#contacto" class="btn-primary" style="margin-top:2rem;">Visítanos</a>
+          <p class="section-kicker">Sobre Armot</p>
+          <h2 class="section-title">Pasión por<br>las <em>dos ruedas</em></h2>
+          <p class="section-body">Somos una tienda de motocicletas en Puente Piedra con años de experiencia en el mercado peruano. Desde la Av. San Juan de Dios 4130, atendemos a riders de toda Lima Norte. Nuestro compromiso: que cada cliente salga satisfecho con la moto perfecta para él.</p>
+          <a href="#contacto" class="btn-primary" style="margin-top:2rem;">Contáctanos</a>
           <div class="about-stats">
             <div class="about-stat">
-              <span class="about-stat-num">200<em>+</em></span>
-              <span class="about-stat-label">Unidades Vendidas</span>
+              <span class="about-stat-num">+200<em>.</em></span>
+              <span class="about-stat-label">Motos entregadas</span>
             </div>
             <div class="about-stat">
-              <span class="about-stat-num">100<em>%</em></span>
-              <span class="about-stat-label">Pasión e Innovación</span>
+              <span class="about-stat-num">5<em>★</em></span>
+              <span class="about-stat-label">Estrellas Google</span>
             </div>
             <div class="about-stat">
-              <span class="about-stat-num">24<em>/7</em></span>
-              <span class="about-stat-label">Soporte Digital</span>
+              <span class="about-stat-num">10<em>+</em></span>
+              <span class="about-stat-label">Años de experiencia</span>
             </div>
           </div>
         </div>
@@ -255,7 +251,7 @@
       <div class="testimonio-inner reveal">
         <p class="testimonio-stars">★ ★ ★ ★ ★</p>
         <blockquote class="testimonio-quote">
-          "Un nivel de atención y estética que no había visto en la zona. Las máquinas son increíbles, pura tecnología."
+          "Muy buena atención, excelente servicio.<br>Lo recomiendo al 100% sin dudarlo."
         </blockquote>
         <p class="testimonio-author">Elizabeth Fabián A &ensp;·&ensp; Google Local Guide &ensp;·&ensp; Cliente verificada</p>
       </div>
@@ -264,54 +260,67 @@
     <section id="contacto">
       <div class="contact-grid">
         <div class="contact-info reveal">
-          <p class="section-kicker">Conexión</p>
-          <h2 class="contact-title">Inicia el<br><em>Sistema</em></h2>
+          <p class="section-kicker">Contáctanos</p>
+          <h2 class="contact-title">Hablemos<br>de tu <em>próxima<br>moto</em></h2>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-icon">📍</div>
               <div>
-                <p class="contact-label">Base de Operaciones</p>
+                <p class="contact-label">Dirección</p>
                 <p class="contact-value">Av. San Juan de Dios 4130<br>Puente Piedra 15122, Lima</p>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon">📞</div>
               <div>
-                <p class="contact-label">Enlace Directo</p>
+                <p class="contact-label">Teléfono / WhatsApp</p>
                 <p class="contact-value"><a href="tel:+51941934802">+51 941 934 802</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">⏰</div>
+              <div>
+                <p class="contact-label">Horario</p>
+                <p class="contact-value">
+                  Lun – Vie: 9:00 am – 5:30 pm<br>
+                  Sábado: 9:00 am – 3:00 pm<br>
+                  Domingo: Cerrado
+                </p>
               </div>
             </div>
           </div>
           <a href="https://wa.me/51941934802?text=Hola,%20busco%20innovación%20en%20dos%20ruedas" target="_blank" class="btn-primary">
-            Conectar por WhatsApp
+            Escribir por WhatsApp
           </a>
         </div>
         <div class="contact-form-col reveal">
           <div class="contact-form">
-            <p class="form-heading">Transmisión de Datos</p>
+            <p class="form-heading">Solicita tu cotización</p>
             <div class="form-row">
               <div class="form-group">
-                <label>ID Usuario</label>
-                <input type="text" placeholder="Nombre completo">
+                <label>Nombre</label>
+                <input type="text" placeholder="Tu nombre completo">
               </div>
               <div class="form-group">
-                <label>Frecuencia de Contacto</label>
-                <input type="tel" placeholder="Número móvil">
+                <label>Teléfono</label>
+                <input type="tel" placeholder="9xx xxx xxx">
               </div>
             </div>
             <div class="form-group">
-              <label>Selección de Hardware</label>
+              <label>Modelo de interés</label>
               <select>
-                <option value="">Clasificación de Interés</option>
-                <option>Sport / Naked Cyber Fighter</option>
-                <option>Urbana / Scooter Neon City</option>
-                <option>Enduro / Trail Apex Cross</option>
-                <option>Eléctrica Volt E-Drive</option>
+                <option value="">Selecciona una categoría</option>
+                <option>Sport / Naked</option>
+                <option>Urbana / Scooter</option>
+                <option>Enduro / Trail</option>
+                <option>Eléctrica</option>
+                <option>Touring / Custom</option>
+                <option>No sé aún, necesito asesoría</option>
               </select>
             </div>
             <div class="form-group">
-              <label>Parámetros Adicionales</label>
-              <textarea rows="3" placeholder="Ingresa tus requerimientos..."></textarea>
+              <label>Mensaje</label>
+              <textarea rows="3" placeholder="Cuéntanos qué buscas..."></textarea>
             </div>
             <button class="btn-submit" onclick="alert('Transmisión exitosa. Te contactaremos en breve.')">
               Enviar Datos →
@@ -325,27 +334,40 @@
       <div class="footer-top">
         <div class="footer-brand">
           <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/650793681_122270788082194393_8231352739779381182_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=iLuiT8qwkoEQ7kNvwHrqYwl&_nc_oc=AdqNYZHdX71QfLbb581gCNg7xGTrsPP70P4v1N5kaxqEW7cicATabDzOAw1atFntekE&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=61n-e2DOidR2mlaRaj-rKA&_nc_ss=7a289&oh=00_Af7cjGDpeIdnvET13yVzZ5EtLYiTfwLhGb63RhqSxEiE9A&oe=6A0C24B1" alt="Logo Motos Armot" class="footer-logo-img">
-          <p class="footer-tagline">Concesionario de vanguardia.<br>Puente Piedra, Lima.</p>
+          <p class="footer-tagline">Tu tienda de confianza en Puente Piedra.<br>Calidad, potencia y servicio en cada kilómetro.</p>
         </div>
         <div class="footer-col">
-          <p class="footer-col-title">Vehículos</p>
+          <p class="footer-col-title">Motos</p>
           <ul>
-            <li><a href="#">Sport Naked</a></li>
-            <li><a href="#">Cyber Scooters</a></li>
+            <li><a href="#">Sport / Naked</a></li>
+            <li><a href="#">Urbanas</a></li>
+            <li><a href="#">Enduro</a></li>
             <li><a href="#">Eléctricas</a></li>
+            <li><a href="#">Touring</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <p class="footer-col-title">Plataforma</p>
+          <p class="footer-col-title">Servicios</p>
           <ul>
-            <li><a href="#">Soporte Técnico</a></li>
-            <li><a href="#">Crédito Digital</a></li>
-            <li><a href="#">Asesoría</a></li>
+            <li><a href="#">Taller técnico</a></li>
+            <li><a href="#">Financiamiento</a></li>
+            <li><a href="#">Garantías</a></li>
+            <li><a href="#">Accesorios</a></li>
+            <li><a href="#">Entrega a domicilio</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Empresa</p>
+          <ul>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Opiniones</a></li>
+            <li><a href="#">Trabaja con nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 MOTOS ARMOT — LIMA, PERÚ.</p>
+        <p class="footer-copy">© 2026 Motos Armot — LIMA, PERÚ</p>
         <div class="social-links">
           <a href="https://wa.me/51941934802" target="_blank" class="social-link" title="WhatsApp">💬</a>
           <a href="#" class="social-link" title="Facebook">f</a>
