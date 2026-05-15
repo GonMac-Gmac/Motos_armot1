@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Motos Armot — Experiencia Exótica e Innovadora</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <div class="fullscreen-menu" id="fullMenu">
+    <div class="menu-close" id="closeMenu">✕</div>
+    <ul class="full-menu-links">
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+
+  <nav id="nav">
+    <a href="#" class="nav-brand">
+      <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/650793681_122270788082194393_8231352739779381182_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=iLuiT8qwkoEQ7kNvwHrqYwl&_nc_oc=AdqNYZHdX71QfLbb581gCNg7xGTrsPP70P4v1N5kaxqEW7cicATabDzOAw1atFntekE&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=61n-e2DOidR2mlaRaj-rKA&_nc_ss=7a289&oh=00_Af7cjGDpeIdnvET13yVzZ5EtLYiTfwLhGb63RhqSxEiE9A&oe=6A0C24B1" alt="Logo Motos Armot" class="nav-logo-img">
+      <div class="brand-text">
+        <span class="logo-txt">ARMOT</span>
+        <span class="logo-sub">PUENTE PIEDRA</span>
+      </div>
+    </a>
+    
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    
+    <div class="nav-actions">
+      <button class="nav-cta" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">
+        Cotizar
+      </button>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div id="main-content">
+
+    <section id="intro-space">
+      <div id="moto-overlay">
+        <div class="moto-panel moto-panel-left" id="motoLeft">
+          <img src="https://mavila.pe/storage/bikes/thumb-vivaz.png" alt="Moto Izquierda PNG" />
+        </div>
+        <div class="moto-panel moto-panel-right" id="motoRight">
+          <img src="https://mavila.pe/storage/bikes/thumb-vivaz.png" alt="Moto Derecha PNG" />
+        </div>
+        <div id="moto-scroll-hint">
+          <div class="moto-scroll-bar"></div>
+          <span class="moto-scroll-txt">scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="hero">
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=1800" alt="Dominando la ruta" loading="eager" />
+      <div class="hero-content">
+        <p class="hero-eyebrow">Puente Piedra · Lima · Est. 2015</p>
+        <h1 class="hero-title">Domina<br>cada <em>ruta</em></h1>
+        <p class="hero-sub">En Motos Armot encontrarás la moto perfecta para tu estilo de vida. Tecnología, innovación y adrenalina pura.</p>
+        <div class="hero-actions">
+          <a href="#catalogo" class="btn-primary">Ver catálogo</a>
+          <a href="#contacto" class="btn-ghost">Hablar con un asesor</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker">
+      <div class="ticker-inner">
+        <span class="ticker-item"><span class="ticker-dot"></span>Motos Armot</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Tecnología Vanguardista</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Rendimiento Exótico</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Lima Norte</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Financiamiento Digital</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Innovación</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Motos Armot</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Tecnología Vanguardista</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Rendimiento Exótico</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Lima Norte</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Financiamiento Digital</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Innovación</span>
+      </div>
+    </div>
+
+    <section id="catalogo" class="section-glass">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-kicker">Modelos Next-Gen</p>
+          <h2 class="section-title">Ingeniería <em>Armot</em></h2>
+        </div>
+        <a href="#contacto" class="btn-ghost">Ver Stock Completo →</a>
+      </div>
+      <div class="catalog-grid">
+        <div class="catalog-card reveal">
+          <div class="catalog-img-wrap">
+            <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/658580127_122273069276194393_441741335388492237_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=LiUYYFaNoukQ7kNvwFMXzV1&_nc_oc=Adp9lb7MW519jc2RZMI2bH6BlpTLy3H_UNK6evWunsOl3oXSmefHt7Tni-Wv_0jk3Ug&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=XeT5vgjfojme2kzevtN4vA&_nc_ss=7a289&oh=00_Af5KNyL6ePcKOgJIZ4coJkwfthmDAZVrMA7M2ExKwMHVkg&oe=6A0BF8C6" alt="Sport Naked" loading="lazy"/>
+            <div class="catalog-overlay"></div>
+          </div>
+          <div class="catalog-info">
+            <span class="catalog-tag">Sport / Naked</span>
+            <h3 class="catalog-name">Cyber Fighter 250</h3>
+            <p class="catalog-price">Desde <strong>S/ 8,500</strong></p>
+          </div>
+        </div>
+        <div class="catalog-card reveal">
+          <div class="catalog-img-wrap">
+            <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/648694967_122270921516194393_8847153515191453556_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=U_hrgDs_9sIQ7kNvwFw6wRF&_nc_oc=AdqjovHO22L4y7oj2tVv4PO-k9csiYcUWpF2EsWrJLIyffqdSJc4S0xhaosjfiKVbnc&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=NR6hjbJFllPRF5J2r4SAQg&_nc_ss=7a289&oh=00_Af57moIt0ZQLmsjy1pqQI-jsDx5h2hUZXFv4_V_2ZT3S7g&oe=6A0C2DCA" alt="Scooter Urbana" loading="lazy"/>
+            <div class="catalog-overlay"></div>
+          </div>
+          <div class="catalog-info">
+            <span class="catalog-tag">Urbana / Scooter</span>
+            <h3 class="catalog-name">Neon City 150</h3>
+            <p class="catalog-price">Desde <strong>S/ 4,200</strong></p>
+          </div>
+        </div>
+        <div class="catalog-card reveal">
+          <div class="catalog-img-wrap">
+            <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/648831048_122270616800194393_5088010056028391155_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=cI3dEkeOz6sQ7kNvwGEPID5&_nc_oc=AdpY39oOAWUMbN7kLEmwZZlYya-2Pp3BvFKRIMo0e-rhr15niBU1XSRCvbi0Zd622nw&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=rVkenaArsN8XXohqphReCQ&_nc_ss=7a289&oh=00_Af6kvWk7W4M89EVMTSI7qHoAuvaWCKTRNjs-UHblQkOe7g&oe=6A0C0E2E" alt="Enduro Trail" loading="lazy"/>
+            <div class="catalog-overlay"></div>
+          </div>
+          <div class="catalog-info">
+            <span class="catalog-tag">Enduro / Trail</span>
+            <h3 class="catalog-name">Apex Cross 200</h3>
+            <p class="catalog-price">Desde <strong>S/ 6,800</strong></p>
+          </div>
+        </div>
+        <div class="catalog-card reveal">
+          <div class="catalog-img-wrap">
+            <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/642188793_122268812312194393_822881825941283080_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=qHFqG2JlJqkQ7kNvwEhXoQS&_nc_oc=Adq6SDe47x13mKvzlS39inv0YodfcToobIlbch75gUo1UmRnsEMOsbapKhcfN-iBmH4&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=kkCcAZsEiwzpMau5P443zA&_nc_ss=7a289&oh=00_Af5T8uRLTZ3E0OZAcozylLrANGr4LxdTylnaY4mmIbwrJA&oe=6A0C3093" alt="Electrica" loading="lazy"/>
+            <div class="catalog-overlay"></div>
+          </div>
+          <div class="catalog-info">
+            <span class="catalog-tag">Eléctrica</span>
+            <h3 class="catalog-name">Volt E-Drive concept</h3>
+            <p class="catalog-price">Desde <strong>S/ 5,900</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="servicios-inner">
+        <div class="reveal">
+          <p class="section-kicker">Rendimiento Garantizado</p>
+          <h2 class="section-title">Soporte<br><em>Exótico</em></h2>
+          <p class="section-body">La innovación no termina al comprar tu motocicleta. Te ofrecemos un ecosistema digital y mecánico completo.</p>
+        </div>
+        <div class="servicios-list">
+          <div class="servicio-row reveal">
+            <span class="srv-num">01</span>
+            <div class="srv-body">
+              <h3 class="srv-title">Taller de Precisión</h3>
+              <p class="srv-desc">Escaneo digital, revisiones de alto rendimiento y uso exclusivo de componentes originales de fábrica.</p>
+            </div>
+            <span class="srv-arrow">→</span>
+          </div>
+          <div class="servicio-row reveal">
+            <span class="srv-num">02</span>
+            <div class="srv-body">
+              <h3 class="srv-title">Financiamiento Inteligente</h3>
+              <p class="srv-desc">Procesos de aprobación digital al instante. Tasas competitivas para que no aplaces tu libertad.</p>
+            </div>
+            <span class="srv-arrow">→</span>
+          </div>
+          <div class="servicio-row reveal">
+            <span class="srv-num">03</span>
+            <div class="srv-body">
+              <h3 class="srv-title">Logística a Domicilio</h3>
+              <p class="srv-desc">Tu nueva máquina llega protegida y lista para encenderse directamente en la puerta de tu garaje.</p>
+            </div>
+            <span class="srv-arrow">→</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="section-glass">
+      <p class="section-kicker reveal">Inspiración Visual</p>
+      <h2 class="section-title reveal">Universo <em>Armot</em></h2>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item gi-tall">
+          <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/640948515_122268681944194393_382854531328592295_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=KUTwgiXb0oIQ7kNvwFXnlSy&_nc_oc=AdowmjlU1DTr3JTBVYGx8_jLCTd5E8yXGZR2aDDSPS3zyhZzxLiRDZwQ_YyukXFkkhI&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=cGzm7lYSmSBWrso70QAxhA&_nc_ss=7a289&oh=00_Af6_I7Ivm1wEYK35yGv1mfse7hGD5XNTqclOosm3eZSq5w&oe=6A0BFDB7" alt="Moto 1" loading="lazy"/>
+        </div>
+        <div class="gallery-item">
+          <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/638146618_122267873012194393_7196747634112774581_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=3R5aWVLPxeYQ7kNvwEpFyF5&_nc_oc=AdrSrBMa-c7-oBL5SMX8Lsl918kecEHBECyasql18RaEeaQ6dFkV0a2QY47zvHTjBzY&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=1wdlOdDvXqCaO9ryehvMIA&_nc_ss=7a289&oh=00_Af7OL8GYxQBYAnzfHUJbSJNZYTZhWKmVgweeW0Rbq0kARQ&oe=6A0C01D0" alt="Moto 2" loading="lazy"/>
+        </div>
+        <div class="gallery-item">
+          <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/634902326_122267557802194393_8970746145047362543_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=1qQD7wyhEw4Q7kNvwENALSx&_nc_oc=AdqyGPO-p5j5-Jj7zzgbLX8PtcJ6gLARDRHOacOfJirgkSyiMIdjocO-YwEV6jXJkzc&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=qwHWPQHOLCuJEc0EHalINQ&_nc_ss=7a289&oh=00_Af6ckXU51b-N2igolyHq7w4DIXzqM5vz7OsRHNuefLSEDA&oe=6A0C0F01" alt="Moto 3" loading="lazy"/>
+        </div>
+        <div class="gallery-item gi-wide">
+          <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/619729417_122263820774194393_2415994661298437471_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=boACCZOvVAwQ7kNvwEPNEJ4&_nc_oc=AdrCDEj2ptDMdhiQh_fdYUGNx2bIwkpFIikY0dpOExR-jQxaVXfXgiaDEihX31Tzh4g&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=bKxS8feiVn5RDcBVAXmR-A&_nc_ss=7a289&oh=00_Af7ELt24A2H57c9yOgvPe5dvf7JPxA5dwoZ5wHxKmjVLDw&oe=6A0C1F1F" alt="Moto 4" loading="lazy"/>
+        </div>
+        <div class="gallery-item">
+          <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/611294665_122261010698194393_1404745157073285423_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=x5BIipIT_qMQ7kNvwGu4B7y&_nc_oc=AdopU2jrCFVuF_9cE8_Q-MKeveLoMD8N09dj-EnOhXrwoJXg4fn3rhDhFpUAIhlG3aw&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=V-wwq59GmJZqztrN5gA8Ew&_nc_ss=7a289&oh=00_Af7kgHt9pjxEZ8nVsJbXV7wZQM7bq7MF76XAOw0COHNPPQ&oe=6A0C0750" alt="Moto 5" loading="lazy"/>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros">
+      <div class="about-grid">
+        <div class="about-img-col reveal">
+          <div class="about-img-frame">
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=900&q=80" alt="Motos Armot tienda" loading="lazy"/>
+          </div>
+          <div class="about-quote-card">
+            <p class="about-quote">"El futuro de la movilidad urbana en dos ruedas comienza aquí."</p>
+            <span class="about-quote-brand">— Visión Armot</span>
+          </div>
+        </div>
+        <div class="about-text-col reveal">
+          <p class="section-kicker">Filosofía</p>
+          <h2 class="section-title">Cultura de<br><em>Vanguardia</em></h2>
+          <p class="section-body">Rompiendo esquemas en Puente Piedra. No somos solo un concesionario, somos el puente tecnológico entre tú y la próxima generación de motociclismo. Rendimiento, estética neón y un servicio técnico implacable.</p>
+          <a href="#contacto" class="btn-primary" style="margin-top:2rem;">Visítanos</a>
+          <div class="about-stats">
+            <div class="about-stat">
+              <span class="about-stat-num">200<em>+</em></span>
+              <span class="about-stat-label">Unidades Vendidas</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-num">100<em>%</em></span>
+              <span class="about-stat-label">Pasión e Innovación</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-num">24<em>/7</em></span>
+              <span class="about-stat-label">Soporte Digital</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonio" class="section-glass">
+      <div class="testimonio-inner reveal">
+        <p class="testimonio-stars">★ ★ ★ ★ ★</p>
+        <blockquote class="testimonio-quote">
+          "Un nivel de atención y estética que no había visto en la zona. Las máquinas son increíbles, pura tecnología."
+        </blockquote>
+        <p class="testimonio-author">Elizabeth Fabián A &ensp;·&ensp; Google Local Guide &ensp;·&ensp; Cliente verificada</p>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="section-kicker">Conexión</p>
+          <h2 class="contact-title">Inicia el<br><em>Sistema</em></h2>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <p class="contact-label">Base de Operaciones</p>
+                <p class="contact-value">Av. San Juan de Dios 4130<br>Puente Piedra 15122, Lima</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <p class="contact-label">Enlace Directo</p>
+                <p class="contact-value"><a href="tel:+51941934802">+51 941 934 802</a></p>
+              </div>
+            </div>
+          </div>
+          <a href="https://wa.me/51941934802?text=Hola,%20busco%20innovación%20en%20dos%20ruedas" target="_blank" class="btn-primary">
+            Conectar por WhatsApp
+          </a>
+        </div>
+        <div class="contact-form-col reveal">
+          <div class="contact-form">
+            <p class="form-heading">Transmisión de Datos</p>
+            <div class="form-row">
+              <div class="form-group">
+                <label>ID Usuario</label>
+                <input type="text" placeholder="Nombre completo">
+              </div>
+              <div class="form-group">
+                <label>Frecuencia de Contacto</label>
+                <input type="tel" placeholder="Número móvil">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Selección de Hardware</label>
+              <select>
+                <option value="">Clasificación de Interés</option>
+                <option>Sport / Naked Cyber Fighter</option>
+                <option>Urbana / Scooter Neon City</option>
+                <option>Enduro / Trail Apex Cross</option>
+                <option>Eléctrica Volt E-Drive</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Parámetros Adicionales</label>
+              <textarea rows="3" placeholder="Ingresa tus requerimientos..."></textarea>
+            </div>
+            <button class="btn-submit" onclick="alert('Transmisión exitosa. Te contactaremos en breve.')">
+              Enviar Datos →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/650793681_122270788082194393_8231352739779381182_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=iLuiT8qwkoEQ7kNvwHrqYwl&_nc_oc=AdqNYZHdX71QfLbb581gCNg7xGTrsPP70P4v1N5kaxqEW7cicATabDzOAw1atFntekE&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=61n-e2DOidR2mlaRaj-rKA&_nc_ss=7a289&oh=00_Af7cjGDpeIdnvET13yVzZ5EtLYiTfwLhGb63RhqSxEiE9A&oe=6A0C24B1" alt="Logo Motos Armot" class="footer-logo-img">
+          <p class="footer-tagline">Concesionario de vanguardia.<br>Puente Piedra, Lima.</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Vehículos</p>
+          <ul>
+            <li><a href="#">Sport Naked</a></li>
+            <li><a href="#">Cyber Scooters</a></li>
+            <li><a href="#">Eléctricas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Plataforma</p>
+          <ul>
+            <li><a href="#">Soporte Técnico</a></li>
+            <li><a href="#">Crédito Digital</a></li>
+            <li><a href="#">Asesoría</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 MOTOS ARMOT — LIMA, PERÚ.</p>
+        <div class="social-links">
+          <a href="https://wa.me/51941934802" target="_blank" class="social-link" title="WhatsApp">💬</a>
+          <a href="#" class="social-link" title="Facebook">f</a>
+          <a href="#" class="social-link" title="Instagram">◎</a>
+          <a href="#" class="social-link" title="TikTok">♪</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
