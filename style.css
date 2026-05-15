@@ -93,7 +93,7 @@ nav.scrolled .hamburger { display: flex; }
 .full-menu-links a:hover { color: var(--yellow); text-shadow: 0 0 20px var(--red-dim); }
 
 /* ══════════════════════════════════════════
-   ESPACIO MOTO PNG (CORREGIDO PARA MÓVIL)
+   ESPACIO MOTO PNG (Base Escritorio)
 ══════════════════════════════════════════ */
 #intro-space { height: 100vh; width: 100vw; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
 #moto-overlay { position: relative; width: 100vw; height: 100vh; z-index: 10; overflow: visible; }
@@ -101,7 +101,7 @@ nav.scrolled .hamburger { display: flex; }
 .moto-panel-left { left: 0; }
 .moto-panel-right { left: 50%; }
 
-/* Por defecto en PC se usa height */
+/* Imagen base PC: escala por altura (60vh) */
 .moto-panel img { position: absolute; top: 50%; height: 60vh; width: auto; max-width: none; filter: drop-shadow(0 0 20px var(--red-dim)); }
 .moto-panel-left img { right: 0; transform: translate(50%, -50%); }
 .moto-panel-right img { left: 0; transform: translate(-50%, -50%); }
@@ -163,7 +163,7 @@ section { padding: 9rem 4.5rem; position: relative; }
 .catalog-info { padding: 1.6rem 1.8rem 2rem; position: absolute; bottom: 0; width: 100%;}
 .catalog-tag { display: block; font-size: .55rem; letter-spacing: .4em; text-transform: uppercase; color: var(--yellow); font-weight: 600; margin-bottom: .6rem; }
 .catalog-name { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; letter-spacing: .03em; color: var(--white); margin-bottom: .5rem; line-height: 1.05; }
-.catalog-price { font-size: .72rem; color: var(--muted); letter-spacing: .1em; }
+.catalog-price { font-size: .72rem; color: rgba(255,255,255,.6); letter-spacing: .1em; }
 .catalog-price strong { color: var(--red); font-weight: 700; font-size: 1.1em;}
 
 /* ── SERVICIOS ── */
@@ -176,7 +176,7 @@ section { padding: 9rem 4.5rem; position: relative; }
 .srv-desc { font-size: .78rem; color: var(--muted); line-height: 1.75; }
 .srv-arrow { font-size: 1rem; color: var(--yellow); transition: color .3s, transform .3s; }
 .servicio-row:hover .srv-title { color: var(--yellow); }
-.servicio-row:hover .srv-arrow { color: var(--red); transform: translateX(8px); }
+.servicio-row:hover .srv-arrow { color: var(--red); transform: translateX(6px); }
 
 /* ── GALERÍA ── */
 .gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 300px 300px; gap: 10px; margin-top: 4rem; background: transparent; }
@@ -224,7 +224,7 @@ section { padding: 9rem 4.5rem; position: relative; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; }
 .form-group { display: flex; flex-direction: column; gap: .5rem; }
 .form-group label { font-size: .58rem; letter-spacing: .3em; text-transform: uppercase; color: var(--off-white); font-weight: 600; }
-.form-group input, .form-group select, .form-group textarea { background: rgba(255,255,255,0.03); border: none; border-bottom: 2px solid rgba(255,255,255,.1); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: .85rem; font-weight: 500; padding: .85rem 0.5rem; outline: none; transition: border-color .3s, background .3s; }
+.form-group input, .form-group select, .form-group textarea { background: rgba(255,255,255,0.02); border: none; border-bottom: 2px solid rgba(255,255,255,.1); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: .85rem; font-weight: 500; padding: .85rem 0.5rem; outline: none; transition: border-color .3s, background .3s; }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--yellow); background: rgba(255,215,0,0.05); }
 .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,.3); }
 .form-group select option { background: var(--dark); }
@@ -273,6 +273,9 @@ footer { background: rgba(5,0,0,0.85); backdrop-filter: blur(20px); border-top: 
 
   section { padding: 6rem 1.5rem; }
   
+  /* Aumentamos tamaño base de la moto en tablets/móviles grandes */
+  .moto-panel img { height: 70vh; } 
+
   /* Centrar hero en móvil */
   #hero { justify-content: center; } 
   .hero-content { padding: 0 1.5rem 4.5rem; text-align: center; margin: 0; width: 100%; }
@@ -296,10 +299,11 @@ footer { background: rgba(5,0,0,0.85); backdrop-filter: blur(20px); border-top: 
   .gi-tall, .gi-wide { grid-row: auto; grid-column: auto; }
   .gallery-item { aspect-ratio: 16/9; }
 
-  /* ── FIX: ESCALA MOTO PNG PARA TELÉFONOS ── */
-  /* Cambiamos la altura fija por ancho para que escale perfecto en vertical */
+  /* ── CORRECCIÓN MOTO PNG TELÉFONOS (Portrait) ── */
+  /* Volvemos a VH pero mucho más grande para llenar pantallas verticales */
   .moto-panel img { 
-    height: auto; 
-    width: 200%; /* El 200% de la mitad del panel = 100% de la pantalla */
+    height: 80vh; /* Ocupa gran parte de la altura para verse grande */
+    width: auto;
+    /* Asegurar que la posición absoluta y transform base se mantengan para centrado vertical */
   }
 }
