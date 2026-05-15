@@ -8,11 +8,9 @@
   --yellow-dim:   rgba(255, 215, 0, 0.4);
   --red:          #E60000;
   --red-dim:      rgba(230, 0, 0, 0.4);
-  
   --black:        #0a0000;
   --dark:         #140000;
   --border:       rgba(255, 215, 0, 0.25);
-  
   --white:        #ffffff;
   --off-white:    #fff5eb;
   --muted:        rgba(255, 255, 255, 0.6);
@@ -21,7 +19,6 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
-/* ── FONDO ESTÁTICO PREMIUM ROJO Y NEGRO ── */
 body {
   background: radial-gradient(circle at 50% 0%, #2a0000 0%, var(--black) 80%);
   background-attachment: fixed;
@@ -45,7 +42,7 @@ body:has(a:hover) #cursor, body:has(button:hover) #cursor { opacity: 0; }
 body:has(a:hover) #cursor-ring, body:has(button:hover) #cursor-ring { width: 54px; height: 54px; border-color: var(--red); background: rgba(255, 215, 0, 0.1); }
 
 /* ══════════════════════════════════════════
-   NAVEGACIÓN INTELIGENTE (Medio Transparente)
+   NAVEGACIÓN ARREGLADA (NO SE SUPERPONE)
 ══════════════════════════════════════════ */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
@@ -78,7 +75,7 @@ nav.scrolled .hamburger { display: flex; }
 .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 5px; }
 .hamburger span { width: 30px; height: 2px; background-color: var(--yellow); transition: 0.3s; }
 
-/* ── MENÚ PANTALLA COMPLETA ── */
+/* ── MENÚ PANTALLA COMPLETA CELULAR ── */
 .fullscreen-menu {
   position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
   background: rgba(10, 0, 0, 0.95); backdrop-filter: blur(15px);
@@ -86,33 +83,31 @@ nav.scrolled .hamburger { display: flex; }
   opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
 }
 .fullscreen-menu.active { opacity: 1; pointer-events: all; }
-.menu-close { position: absolute; top: 2rem; right: 4.5rem; font-size: 2.5rem; color: var(--yellow); cursor: pointer; transition: transform 0.3s; }
-.menu-close:hover { transform: scale(1.1); color: var(--red); }
 .full-menu-links { list-style: none; text-align: center; display: flex; flex-direction: column; gap: 2.5rem; }
 .full-menu-links a { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-style: italic; color: var(--white); text-decoration: none; transition: color 0.3s; }
 .full-menu-links a:hover { color: var(--yellow); text-shadow: 0 0 20px var(--red-dim); }
 
 /* ══════════════════════════════════════════
-   ESPACIO MOTO PNG (Base Escritorio)
+   ESPACIO MOTO PNG 
 ══════════════════════════════════════════ */
 #intro-space { height: 100vh; width: 100vw; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-#moto-overlay { position: relative; width: 100vw; height: 100vh; z-index: 10; overflow: visible; }
+#moto-overlay { position: relative; width: 100vw; height: 85vh; z-index: 10; overflow: visible; }
 .moto-panel { position: absolute; top: 0; height: 100%; width: 50%; will-change: transform; overflow: hidden; display: flex; align-items: center; }
 .moto-panel-left { left: 0; }
 .moto-panel-right { left: 50%; }
 
-/* Imagen base PC: escala por altura (60vh) */
+/* Vista Computadora */
 .moto-panel img { position: absolute; top: 50%; height: 60vh; width: auto; max-width: none; filter: drop-shadow(0 0 20px var(--red-dim)); }
 .moto-panel-left img { right: 0; transform: translate(50%, -50%); }
 .moto-panel-right img { left: 0; transform: translate(-50%, -50%); }
 
-#moto-scroll-hint { position: absolute; bottom: 2rem; left: 0; width: 100%; display: flex; flex-direction: column; align-items: center; gap: .8rem; z-index: 20; pointer-events: none; }
+#moto-scroll-hint { position: absolute; bottom: 0rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: .8rem; z-index: 20; pointer-events: none; }
 .moto-scroll-bar { width: 2px; height: 50px; background: linear-gradient(to bottom, var(--yellow), transparent); animation: scrollPulse 2.2s ease-in-out infinite; }
 @keyframes scrollPulse { 0%,100% { opacity: .4; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(.6); } }
 .moto-scroll-txt { font-size: .5rem; letter-spacing: .6em; text-transform: uppercase; color: var(--yellow); font-weight: 600; writing-mode: vertical-lr; }
 
 /* ── BOTONES GLOBALES ── */
-.btn-primary { display: inline-block; font-size: .64rem; letter-spacing: .35em; text-transform: uppercase; font-weight: 700; font-family: 'Montserrat', sans-serif; background: var(--red); color: var(--white); border: 1px solid var(--red); padding: 1.05rem 2.6rem; text-decoration: none; transition: background .3s, color .3s, border-color .3s, transform .3s; cursor: none; }
+.btn-primary { display: inline-block; font-size: .64rem; letter-spacing: .35em; text-transform: uppercase; font-weight: 700; font-family: 'Montserrat', sans-serif; background: var(--red); color: var(--white); border: 1px solid var(--red); padding: 1.05rem 2.6rem; text-decoration: none; transition: all .3s; cursor: none; }
 .btn-primary:hover { background: var(--yellow); color: var(--black); border-color: var(--yellow); transform: translateY(-2px); box-shadow: 0 10px 20px var(--red-dim); }
 .btn-ghost { font-size: .64rem; letter-spacing: .35em; text-transform: uppercase; color: var(--white); text-decoration: none; font-weight: 500; border-bottom: 2px solid var(--yellow-dim); padding-bottom: 2px; transition: color .3s, border-color .3s; }
 .btn-ghost:hover { color: var(--yellow); border-color: var(--yellow); }
@@ -159,7 +154,7 @@ section { padding: 9rem 4.5rem; position: relative; }
 .catalog-img-wrap { aspect-ratio: 2/3; overflow: hidden; position: relative; }
 .catalog-img-wrap img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(10%) brightness(.85) saturate(1.3); transition: transform .8s ease, filter .6s; }
 .catalog-card:hover .catalog-img-wrap img { transform: scale(1.08); filter: grayscale(0%) brightness(1) saturate(1.6); }
-.catalog-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,0,0,.95) 0%, transparent 60%); }
+.catalog-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,0,0,.9) 0%, transparent 60%); }
 .catalog-info { padding: 1.6rem 1.8rem 2rem; position: absolute; bottom: 0; width: 100%;}
 .catalog-tag { display: block; font-size: .55rem; letter-spacing: .4em; text-transform: uppercase; color: var(--yellow); font-weight: 600; margin-bottom: .6rem; }
 .catalog-name { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; letter-spacing: .03em; color: var(--white); margin-bottom: .5rem; line-height: 1.05; }
@@ -176,7 +171,7 @@ section { padding: 9rem 4.5rem; position: relative; }
 .srv-desc { font-size: .78rem; color: var(--muted); line-height: 1.75; }
 .srv-arrow { font-size: 1rem; color: var(--yellow); transition: color .3s, transform .3s; }
 .servicio-row:hover .srv-title { color: var(--yellow); }
-.servicio-row:hover .srv-arrow { color: var(--red); transform: translateX(6px); }
+.servicio-row:hover .srv-arrow { color: var(--red); transform: translateX(8px); }
 
 /* ── GALERÍA ── */
 .gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 300px 300px; gap: 10px; margin-top: 4rem; background: transparent; }
@@ -224,7 +219,7 @@ section { padding: 9rem 4.5rem; position: relative; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; }
 .form-group { display: flex; flex-direction: column; gap: .5rem; }
 .form-group label { font-size: .58rem; letter-spacing: .3em; text-transform: uppercase; color: var(--off-white); font-weight: 600; }
-.form-group input, .form-group select, .form-group textarea { background: rgba(255,255,255,0.02); border: none; border-bottom: 2px solid rgba(255,255,255,.1); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: .85rem; font-weight: 500; padding: .85rem 0.5rem; outline: none; transition: border-color .3s, background .3s; }
+.form-group input, .form-group select, .form-group textarea { background: rgba(255,255,255,0.03); border: none; border-bottom: 2px solid rgba(255,255,255,.1); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: .85rem; font-weight: 500; padding: .85rem 0.5rem; outline: none; transition: border-color .3s, background .3s; }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--yellow); background: rgba(255,215,0,0.05); }
 .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,.3); }
 .form-group select option { background: var(--dark); }
@@ -246,9 +241,8 @@ footer { background: rgba(5,0,0,0.85); backdrop-filter: blur(20px); border-top: 
 .social-link { width: 36px; height: 36px; border: 1px solid rgba(255,215,0,0.2); display: flex; align-items: center; justify-content: center; font-size: .85rem; color: var(--muted); text-decoration: none; border-radius: 50%; transition: all .3s; }
 .social-link:hover { border-color: var(--yellow); color: var(--black); background: var(--yellow); }
 
-
 /* ══════════════════════════════════════════
-   RESPONSIVE Y MÓVIL (CORREGIDO PARA QUE NO CHOQUE)
+   RESPONSIVE (MÓVIL Y MENÚ HAMBURGUESA)
 ══════════════════════════════════════════ */
 @media (max-width: 1200px) {
   .catalog-grid { grid-template-columns: repeat(2,1fr); }
@@ -260,22 +254,18 @@ footer { background: rgba(5,0,0,0.85); backdrop-filter: blur(20px); border-top: 
   nav { padding: 1.2rem 1.5rem; }
   nav.scrolled { padding: 1rem 1.5rem; }
   
-  /* Ajuste de logo en móvil para que no choque con la hamburguesa */
   .nav-brand { gap: 0.5rem; }
   .nav-logo-img { width: 40px; height: 40px; }
   .logo-txt { font-size: 1.6rem; }
   .logo-sub { font-size: 0.4rem; letter-spacing: 0.3em; }
 
-  /* Mostrar Hamburguesa y ocultar links/boton */
-  .hamburger { display: flex; margin-left: auto; }
+  /* Mostrar Hamburguesa y ocultar links/boton en el nav */
+  .hamburger { display: flex; margin-left: auto; z-index: 1003; }
   .nav-cta { display: none; }
   .nav-links { display: none; }
 
   section { padding: 6rem 1.5rem; }
   
-  /* Aumentamos tamaño base de la moto en tablets/móviles grandes */
-  .moto-panel img { height: 70vh; } 
-
   /* Centrar hero en móvil */
   #hero { justify-content: center; } 
   .hero-content { padding: 0 1.5rem 4.5rem; text-align: center; margin: 0; width: 100%; }
@@ -288,8 +278,6 @@ footer { background: rgba(5,0,0,0.85); backdrop-filter: blur(20px); border-top: 
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px 200px; }
   .gi-tall { grid-row: span 2; }
   .gi-wide { grid-column: span 2; }
-  
-  .menu-close { right: 2rem; }
 }
 
 @media (max-width: 640px) {
@@ -298,12 +286,17 @@ footer { background: rgba(5,0,0,0.85); backdrop-filter: blur(20px); border-top: 
   .gallery-grid { grid-template-columns: 1fr; grid-template-rows: none; }
   .gi-tall, .gi-wide { grid-row: auto; grid-column: auto; }
   .gallery-item { aspect-ratio: 16/9; }
+  .about-stats { grid-template-columns: 1fr; }
+  .about-stat { border-right: none; border-bottom: 1px solid var(--border); }
+  .about-stat:last-child { border-bottom: none; }
 
-  /* ── CORRECCIÓN MOTO PNG TELÉFONOS (Portrait) ── */
-  /* Volvemos a VH pero mucho más grande para llenar pantallas verticales */
+  /* ── CORRECCIÓN DE LA MOTO PNG PARA CELULAR ── */
+  /* Utilizamos width en lugar de height para que abarque la pantalla horizontalmente */
   .moto-panel img { 
-    height: 80vh; /* Ocupa gran parte de la altura para verse grande */
-    width: auto;
-    /* Asegurar que la posición absoluta y transform base se mantengan para centrado vertical */
+    height: auto; 
+    width: 190%; /* Ajusta el ancho para que entre perfecto */
+    top: 50%;
   }
+  .moto-panel-left img { right: 0; transform: translate(50%, -50%); }
+  .moto-panel-right img { left: 0; transform: translate(-50%, -50%); }
 }
