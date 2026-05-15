@@ -51,26 +51,18 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   display: flex; justify-content: space-between; align-items: center;
   padding: 1.5rem 4.5rem; transition: transform 0.5s ease, background 0.5s ease, padding 0.5s ease;
-  background: rgba(10, 0, 0, 0.4); /* Medio transparente */
+  background: rgba(10, 0, 0, 0.4); 
   backdrop-filter: blur(10px);
   border-bottom: 1px solid transparent; gap: 2rem;
 }
 
-/* Modos de la barra inteligente gestionados por JS */
-nav.nav-hidden {
-  transform: translateY(-100%); /* Desaparece al bajar */
-}
-nav.scrolled {
-  background: rgba(10, 0, 0, 0.95);
-  padding: 1rem 4.5rem; border-bottom: 1px solid var(--border);
-}
-
-/* Oculta los links y muestra la hamburguesa al hacer scroll */
+nav.nav-hidden { transform: translateY(-100%); }
+nav.scrolled { background: rgba(10, 0, 0, 0.95); padding: 1rem 4.5rem; border-bottom: 1px solid var(--border); }
 nav.scrolled .nav-links { display: none; }
 nav.scrolled .hamburger { display: flex; }
 
 .nav-brand { display: flex; align-items: center; gap: 1rem; text-decoration: none; flex-shrink: 0; }
-.nav-logo-img { width: 55px; height: 55px; object-fit: cover; border-radius: 50%; border: 2px solid var(--yellow); box-shadow: 0 0 10px var(--red-dim); }
+.nav-logo-img { width: 55px; height: 55px; object-fit: contain; border-radius: 50%; border: 2px solid var(--yellow); box-shadow: 0 0 10px var(--red-dim); background: #000; }
 .brand-text { display: flex; flex-direction: column; align-items: flex-start; }
 .logo-txt { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--yellow); margin-bottom: 0.2rem; text-shadow: 0 0 15px var(--red); line-height: 1; }
 .logo-sub { font-size: 0.5rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--white); font-weight: 500; }
@@ -83,7 +75,6 @@ nav.scrolled .hamburger { display: flex; }
 .nav-cta { font-family: 'Montserrat', sans-serif; font-size: .62rem; letter-spacing: .3em; text-transform: uppercase; color: var(--black); border: 1px solid var(--yellow); background: var(--yellow); padding: .7rem 1.8rem; cursor: none; transition: all .3s; font-weight: 700; flex-shrink: 0; }
 .nav-cta:hover { background: transparent; color: var(--yellow); }
 
-/* Menú Hamburguesa */
 .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 5px; }
 .hamburger span { width: 30px; height: 2px; background-color: var(--yellow); transition: 0.3s; }
 
@@ -102,24 +93,26 @@ nav.scrolled .hamburger { display: flex; }
 .full-menu-links a:hover { color: var(--yellow); text-shadow: 0 0 20px var(--red-dim); }
 
 /* ══════════════════════════════════════════
-   ESPACIO MOTO PNG 
+   ESPACIO MOTO PNG (CORREGIDO PARA MÓVIL)
 ══════════════════════════════════════════ */
 #intro-space { height: 100vh; width: 100vw; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-#moto-overlay { position: relative; width: 100vw; height: 85vh; z-index: 10; overflow: visible; }
+#moto-overlay { position: relative; width: 100vw; height: 100vh; z-index: 10; overflow: visible; }
 .moto-panel { position: absolute; top: 0; height: 100%; width: 50%; will-change: transform; overflow: hidden; display: flex; align-items: center; }
 .moto-panel-left { left: 0; }
 .moto-panel-right { left: 50%; }
-.moto-panel img { position: absolute; top: 50%; height: 80vh; width: auto; max-width: none; filter: drop-shadow(0 0 20px var(--red-dim)); }
+
+/* Por defecto en PC se usa height */
+.moto-panel img { position: absolute; top: 50%; height: 60vh; width: auto; max-width: none; filter: drop-shadow(0 0 20px var(--red-dim)); }
 .moto-panel-left img { right: 0; transform: translate(50%, -50%); }
 .moto-panel-right img { left: 0; transform: translate(-50%, -50%); }
 
-#moto-scroll-hint { position: absolute; bottom: 0rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: .8rem; z-index: 20; pointer-events: none; }
+#moto-scroll-hint { position: absolute; bottom: 2rem; left: 0; width: 100%; display: flex; flex-direction: column; align-items: center; gap: .8rem; z-index: 20; pointer-events: none; }
 .moto-scroll-bar { width: 2px; height: 50px; background: linear-gradient(to bottom, var(--yellow), transparent); animation: scrollPulse 2.2s ease-in-out infinite; }
 @keyframes scrollPulse { 0%,100% { opacity: .4; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(.6); } }
 .moto-scroll-txt { font-size: .5rem; letter-spacing: .6em; text-transform: uppercase; color: var(--yellow); font-weight: 600; writing-mode: vertical-lr; }
 
 /* ── BOTONES GLOBALES ── */
-.btn-primary { display: inline-block; font-size: .64rem; letter-spacing: .35em; text-transform: uppercase; font-weight: 700; font-family: 'Montserrat', sans-serif; background: var(--red); color: var(--white); border: 1px solid var(--red); padding: 1.05rem 2.6rem; text-decoration: none; transition: all .3s; cursor: none; }
+.btn-primary { display: inline-block; font-size: .64rem; letter-spacing: .35em; text-transform: uppercase; font-weight: 700; font-family: 'Montserrat', sans-serif; background: var(--red); color: var(--white); border: 1px solid var(--red); padding: 1.05rem 2.6rem; text-decoration: none; transition: background .3s, color .3s, border-color .3s, transform .3s; cursor: none; }
 .btn-primary:hover { background: var(--yellow); color: var(--black); border-color: var(--yellow); transform: translateY(-2px); box-shadow: 0 10px 20px var(--red-dim); }
 .btn-ghost { font-size: .64rem; letter-spacing: .35em; text-transform: uppercase; color: var(--white); text-decoration: none; font-weight: 500; border-bottom: 2px solid var(--yellow-dim); padding-bottom: 2px; transition: color .3s, border-color .3s; }
 .btn-ghost:hover { color: var(--yellow); border-color: var(--yellow); }
@@ -166,11 +159,11 @@ section { padding: 9rem 4.5rem; position: relative; }
 .catalog-img-wrap { aspect-ratio: 2/3; overflow: hidden; position: relative; }
 .catalog-img-wrap img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(10%) brightness(.85) saturate(1.3); transition: transform .8s ease, filter .6s; }
 .catalog-card:hover .catalog-img-wrap img { transform: scale(1.08); filter: grayscale(0%) brightness(1) saturate(1.6); }
-.catalog-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,0,0,.9) 0%, transparent 60%); }
+.catalog-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,0,0,.95) 0%, transparent 60%); }
 .catalog-info { padding: 1.6rem 1.8rem 2rem; position: absolute; bottom: 0; width: 100%;}
 .catalog-tag { display: block; font-size: .55rem; letter-spacing: .4em; text-transform: uppercase; color: var(--yellow); font-weight: 600; margin-bottom: .6rem; }
 .catalog-name { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; letter-spacing: .03em; color: var(--white); margin-bottom: .5rem; line-height: 1.05; }
-.catalog-price { font-size: .72rem; color: rgba(255,255,255,.6); letter-spacing: .1em; }
+.catalog-price { font-size: .72rem; color: var(--muted); letter-spacing: .1em; }
 .catalog-price strong { color: var(--red); font-weight: 700; font-size: 1.1em;}
 
 /* ── SERVICIOS ── */
@@ -183,10 +176,10 @@ section { padding: 9rem 4.5rem; position: relative; }
 .srv-desc { font-size: .78rem; color: var(--muted); line-height: 1.75; }
 .srv-arrow { font-size: 1rem; color: var(--yellow); transition: color .3s, transform .3s; }
 .servicio-row:hover .srv-title { color: var(--yellow); }
-.servicio-row:hover .srv-arrow { color: var(--red); transform: translateX(6px); }
+.servicio-row:hover .srv-arrow { color: var(--red); transform: translateX(8px); }
 
 /* ── GALERÍA ── */
-.gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 300px 300px; gap: 10px; margin-top: 4rem; }
+.gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 300px 300px; gap: 10px; margin-top: 4rem; background: transparent; }
 .gallery-item { overflow: hidden; position: relative; border-radius: 12px; border: 1px solid rgba(255,215,0,0.1); }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.8) saturate(1.3); transition: transform .8s ease, filter .6s; }
 .gallery-item:hover img { transform: scale(1.06); filter: brightness(1) saturate(1.6); }
@@ -198,7 +191,7 @@ section { padding: 9rem 4.5rem; position: relative; }
 .about-img-col { position: relative; }
 .about-img-frame { width: 100%; aspect-ratio: 4/5; overflow: hidden; border-radius: 16px; border: 1px solid var(--red); box-shadow: 0 0 40px var(--red-dim); }
 .about-img-frame img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.9) saturate(1.3); }
-.about-quote-card { position: absolute; bottom: -2.5rem; left: -2.5rem; background: var(--dark); border: 1px solid var(--border); border-left: 4px solid var(--red); padding: 2.2rem 2.5rem; max-width: 300px; z-index: 2; box-shadow: 0 10px 30px var(--black); border-radius: 8px;}
+.about-quote-card { position: absolute; bottom: -2.5rem; left: -2.5rem; background: rgba(15,0,0,0.85); backdrop-filter: blur(15px); border: 1px solid var(--border); border-left: 4px solid var(--red); padding: 2.2rem 2.5rem; max-width: 300px; z-index: 2; box-shadow: 0 10px 30px var(--black); border-radius: 8px;}
 .about-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; font-style: italic; line-height: 1.35; color: var(--yellow); margin-bottom: .8rem; }
 .about-quote-brand { font-size: .58rem; letter-spacing: .3em; text-transform: uppercase; color: var(--white); font-weight: 600; }
 .about-stats { display: grid; grid-template-columns: repeat(3,1fr); border: 1px solid var(--border); margin-top: 3rem; background: rgba(0,0,0,0.4); border-radius: 8px;}
@@ -209,7 +202,7 @@ section { padding: 9rem 4.5rem; position: relative; }
 .about-stat-label { font-size: .56rem; letter-spacing: .3em; text-transform: uppercase; color: var(--yellow); font-weight: 600; }
 
 /* ── TESTIMONIAL ── */
-#testimonio { text-align: center; }
+#testimonio { padding: 8rem 4.5rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--dark); }
 .testimonio-inner { max-width: 860px; margin: 0 auto; }
 .testimonio-stars { font-size: 1.2rem; letter-spacing: .5em; color: var(--yellow); margin-bottom: 2.5rem; }
 .testimonio-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 300; font-style: italic; line-height: 1.15; color: var(--white); margin-bottom: 2rem; quotes: none; border: none; }
@@ -231,17 +224,17 @@ section { padding: 9rem 4.5rem; position: relative; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; }
 .form-group { display: flex; flex-direction: column; gap: .5rem; }
 .form-group label { font-size: .58rem; letter-spacing: .3em; text-transform: uppercase; color: var(--off-white); font-weight: 600; }
-.form-group input, .form-group select, .form-group textarea { background: rgba(255,255,255,0.02); border: none; border-bottom: 2px solid rgba(255,255,255,.1); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: .85rem; font-weight: 500; padding: .85rem 0.5rem; outline: none; transition: border-color .3s, background .3s; }
+.form-group input, .form-group select, .form-group textarea { background: rgba(255,255,255,0.03); border: none; border-bottom: 2px solid rgba(255,255,255,.1); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: .85rem; font-weight: 500; padding: .85rem 0.5rem; outline: none; transition: border-color .3s, background .3s; }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--yellow); background: rgba(255,215,0,0.05); }
 .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,.3); }
 .form-group select option { background: var(--dark); }
 .btn-submit { font-family: 'Montserrat', sans-serif; font-size: .63rem; letter-spacing: .35em; text-transform: uppercase; font-weight: 700; color: var(--white); background: var(--red); border: 1px solid var(--red); cursor: none; padding: 1.05rem 2rem; align-self: flex-start; margin-top: .5rem; transition: background .3s, color .3s, border-color .3s; }
 .btn-submit:hover { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
 
-/* ── FOOTER SOFISTICADO ── */
-footer { background: rgba(5,0,0,0.85); backdrop-filter: blur(20px); border-top: 1px solid rgba(255, 215, 0, 0.1); padding: 5.5rem 4.5rem 2.5rem; }
+/* ── FOOTER ── */
+footer { background: rgba(5,0,0,0.85); backdrop-filter: blur(20px); border-top: 1px solid rgba(255, 215, 0, 0.1); padding: 5.5rem 4.5rem 2.5rem; position: relative; z-index: 10; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid rgba(255, 215, 0, 0.05); }
-.footer-logo-img { width: 80px; height: 80px; object-fit: contain; border-radius: 50%; border: 1px solid var(--yellow); margin-bottom: 1rem; }
+.footer-logo-img { width: 80px; height: 80px; object-fit: contain; border-radius: 50%; border: 2px solid var(--yellow); margin-bottom: 1rem; background: #000; box-shadow: 0 0 10px var(--red-dim);}
 .footer-tagline { font-size: .78rem; color: var(--muted); line-height: 1.85; font-weight: 300; letter-spacing: .05em; }
 .footer-col-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--white); margin-bottom: 1.5rem; font-weight: 300; letter-spacing: .05em; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
@@ -253,7 +246,10 @@ footer { background: rgba(5,0,0,0.85); backdrop-filter: blur(20px); border-top: 
 .social-link { width: 36px; height: 36px; border: 1px solid rgba(255,215,0,0.2); display: flex; align-items: center; justify-content: center; font-size: .85rem; color: var(--muted); text-decoration: none; border-radius: 50%; transition: all .3s; }
 .social-link:hover { border-color: var(--yellow); color: var(--black); background: var(--yellow); }
 
-/* ── RESPONSIVE (MÓVIL Y MENÚ HAMBURGUESA) ── */
+
+/* ══════════════════════════════════════════
+   RESPONSIVE Y MÓVIL (CORREGIDO PARA QUE NO CHOQUE)
+══════════════════════════════════════════ */
 @media (max-width: 1200px) {
   .catalog-grid { grid-template-columns: repeat(2,1fr); }
   .servicios-inner { grid-template-columns: 1fr; gap: 4rem; }
@@ -261,25 +257,36 @@ footer { background: rgba(5,0,0,0.85); backdrop-filter: blur(20px); border-top: 
 }
 
 @media (max-width: 900px) {
-  nav { padding: 1.5rem 1.8rem; }
+  nav { padding: 1.2rem 1.5rem; }
+  nav.scrolled { padding: 1rem 1.5rem; }
   
-  /* En tablets/móviles forzamos el menú hamburguesa siempre */
-  .hamburger { display: flex; z-index: 1001; }
+  /* Ajuste de logo en móvil para que no choque con la hamburguesa */
+  .nav-brand { gap: 0.5rem; }
+  .nav-logo-img { width: 40px; height: 40px; }
+  .logo-txt { font-size: 1.6rem; }
+  .logo-sub { font-size: 0.4rem; letter-spacing: 0.3em; }
+
+  /* Mostrar Hamburguesa y ocultar links/boton */
+  .hamburger { display: flex; margin-left: auto; }
   .nav-cta { display: none; }
   .nav-links { display: none; }
 
-  section { padding: 6rem 1.8rem; }
+  section { padding: 6rem 1.5rem; }
   
+  /* Centrar hero en móvil */
   #hero { justify-content: center; } 
-  .hero-content { padding: 0 1.8rem 4.5rem; text-align: center; margin: 0; }
+  .hero-content { padding: 0 1.5rem 4.5rem; text-align: center; margin: 0; width: 100%; }
   .hero-eyebrow { justify-content: center; flex-direction: row; }
   .hero-sub { margin-left: auto; margin-right: auto; }
   .hero-actions { justify-content: center; }
 
   .about-grid, .contact-grid, .footer-top { grid-template-columns: 1fr; gap: 5rem; }
   .catalog-grid { grid-template-columns: repeat(2,1fr); }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px 200px; }
+  .gi-tall { grid-row: span 2; }
+  .gi-wide { grid-column: span 2; }
   
-  .nav-logo-img { width: 45px; height: 45px; }
+  .menu-close { right: 2rem; }
 }
 
 @media (max-width: 640px) {
@@ -288,5 +295,11 @@ footer { background: rgba(5,0,0,0.85); backdrop-filter: blur(20px); border-top: 
   .gallery-grid { grid-template-columns: 1fr; grid-template-rows: none; }
   .gi-tall, .gi-wide { grid-row: auto; grid-column: auto; }
   .gallery-item { aspect-ratio: 16/9; }
-  .moto-panel img { height: 60vh; }
+
+  /* ── FIX: ESCALA MOTO PNG PARA TELÉFONOS ── */
+  /* Cambiamos la altura fija por ancho para que escale perfecto en vertical */
+  .moto-panel img { 
+    height: auto; 
+    width: 200%; /* El 200% de la mitad del panel = 100% de la pantalla */
+  }
 }
