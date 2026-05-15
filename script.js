@@ -11,56 +11,58 @@
   const cursor         = document.getElementById('cursor');
   const cursorRing     = document.getElementById('cursor-ring');
   
-  // Elementos del Menú Hamburguesa y Nav Inteligente
+  // Elementos de la navegación y el Menú de Celular
   const hamburger = document.getElementById('hamburger');
   const fullMenu  = document.getElementById('fullMenu');
-  const closeMenu = document.getElementById('closeMenu');
-  const menuLinks = document.querySelectorAll('.full-menu-links a');
+  const navLinks  = document.querySelectorAll('.full-menu-links a');
 
-  /* ── LÓGICA DEL MENÚ A PANTALLA COMPLETA ── */
-  if (hamburger && fullMenu && closeMenu) {
+  /* ── MENÚ HAMBURGUESA CELULAR ── */
+  if (hamburger && fullMenu) {
     hamburger.addEventListener('click', () => {
       fullMenu.classList.add('active');
     });
     
-    closeMenu.addEventListener('click', () => {
-      fullMenu.classList.remove('active');
+    // Al hacer click en el fondo del menú, ciérralo
+    fullMenu.addEventListener('click', (e) => {
+      if (e.target === fullMenu || e.target.id === 'closeMenu') {
+        fullMenu.classList.remove('active');
+      }
     });
 
-    // Cerrar al hacer clic en un enlace del menú
-    menuLinks.forEach(link => {
+    // Cerrar el menú si hacen clic en un enlace
+    navLinks.forEach(link => {
       link.addEventListener('click', () => {
         fullMenu.classList.remove('active');
       });
     });
   }
 
-  /* ── NAVEGACIÓN INTELIGENTE (Desaparece al bajar) ── */
+  /* ── NAVEGACIÓN INTELIGENTE (Ocultar al bajar) ── */
   let lastScroll = 0;
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
-    // Si bajamos de los 80px, añadimos el fondo oscuro
+    // Si bajamos de los 80px, añadimos la clase para el fondo oscuro
     if (currentScroll > 80) {
       nav.classList.add('scrolled');
       
-      // Si estamos bajando, ocultamos la barra
+      // Si estamos bajando, ocultamos el nav
       if (currentScroll > lastScroll) {
         nav.classList.add('nav-hidden');
       } else {
-        // Si estamos subiendo, mostramos la barra (con la hamburguesa activa vía CSS)
+        // Si estamos subiendo, lo volvemos a mostrar
         nav.classList.remove('nav-hidden');
       }
     } else {
-      // Arriba del todo vuelve a su estado inicial
+      // Si estamos arriba del todo, el nav vuelve a su estado inicial transparente
       nav.classList.remove('scrolled');
       nav.classList.remove('nav-hidden');
     }
     
-    lastScroll = currentScroll <= 0 ? 0 : currentScroll; 
+    lastScroll = currentScroll <= 0 ? 0 : currentScroll; // Evitar bugs en móviles al llegar a top
   }, { passive: true });
 
-  /* ── ANIMACIÓN MOTO DIVIDIDA ── */
+  /* ── ANIMACIÓN DE MOTO DIVIDIDA ── */
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '#intro-space',
@@ -95,13 +97,15 @@
   })();
 
   document.addEventListener('mouseleave', () => { 
-    cursor.style.opacity = '0'; cursorRing.style.opacity = '0'; 
+    cursor.style.opacity = '0'; 
+    cursorRing.style.opacity = '0'; 
   });
   document.addEventListener('mouseenter', () => { 
-    cursor.style.opacity = '1'; cursorRing.style.opacity = '1'; 
+    cursor.style.opacity = '1'; 
+    cursorRing.style.opacity = '1'; 
   });
 
-  /* ── SCROLL REVEAL (Aparición de Secciones) ── */
+  /* ── SCROLL REVEAL (Aparición de elementos) ── */
   const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -115,18 +119,7 @@
   );
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  /* ── EFECTO HERO PARALLAX ── */
-  const heroPhoto = document.querySelector('.hero-photo');
-  if (heroPhoto) {
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      if (scrollY < window.innerHeight) {
-        heroPhoto.style.transform = `translateY(${scrollY * 0.25}px)`;
-      }
-    }, { passive: true });
-  }
-
-  /* ── TICKER INFINITO ── */
+  /* ── TICKER (Banda Deslizante) ── */
   const tickerInner = document.querySelector('.ticker-inner');
   if (tickerInner) {
     const ticker = document.querySelector('.ticker');
@@ -143,23 +136,5 @@
       img.addEventListener('load', () => { img.style.opacity = '1'; });
     }
   });
-
-  /* ── NAV ACTIVO POR SECCIÓN ── */
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.style.color = '';
-            if (link.getAttribute('href') === '#' + entry.target.id) { 
-              link.style.color = 'var(--yellow)'; 
-            }
-          });
-        }
-      });
-    }, { threshold: 0.4 }
-  );
-  sections.forEach(s => sectionObserver.observe(s));
 
 })();
